@@ -1,0 +1,286 @@
+
+/* dark theme overrides */
+[data-theme="dark"] {
+    --accordion-active-summary-color: #c08aa6 !important;
+    --accordion-open-summary-color: #aaa !important;
+    --code-color: rgb(200,200,200) !important;
+    --code-background-color: rgba(30,30,30,0.9) !important;
+    --font-family: 'Poppins' !important;
+    --form-element-background-color: rgba(30,30,30,0.9) !important;
+    --primary: #5ec9ed !important;
+    --primary-inverse: #ddd !important;
+}
+
+html {
+    min-height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.97) 0%,rgba(40,40,40,0.97) 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* focus overrides */
+
+a,
+button,
+input,
+select,
+textarea,
+summary {
+    transition: none !important;
+}
+
+button:focus,
+[role=button]:focus,
+input:focus,
+select:focus,
+textarea:focus,
+summary:focus {
+    box-shadow: none !important;
+    border: none !important;
+    outline: 2px solid #ccc !important;
+}
+
+a:focus-visible {
+    outline: 2px solid #ccc;
+}
+
+a:not([role="button"]):focus {
+    background: none;
+}
+
+/* make room for audio */
+body {
+    margin-bottom: 40px;
+}
+
+main {
+    padding-bottom: 0px !important;
+}
+
+/* header */
+header {
+    padding: 0px !important;
+}
+
+header a:hover, header a:focus, header button:hover, header button:focus {
+    text-decoration: none;
+    background: rgba(50, 50, 50, 0.8) !important;
+}
+
+h1 a {
+    font-size: 16px;
+    color: #eee;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 25px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;   
+      
+}
+
+h1 a img {
+    max-width: 21px;
+    margin-right: 6px;
+    position: relative;
+    bottom: 2px;
+}
+
+
+.secondary{
+    font-size: 16px;
+    color: #eee;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 25px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 400;
+    font-style: normal;  
+}
+
+/* tracks */
+button.track {
+    background: none;
+    border: none;
+    text-align: left;
+    color: var(--primary);
+    margin-left: 15px;
+    margin-bottom: 3px;
+    padding: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% - 30px);
+}
+
+button.track:last-of-type {
+    margin-bottom: 15px;
+}
+button.track:first-of-type {
+    margin-top: 0px;
+}
+
+button.track i {
+    margin-right: 10px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.playing {
+    color: #c08aa6 !important;
+}
+
+/* folder ID input */
+#parentfolder {
+    width: calc(100% - 282px);
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+
+/* visibly hidden */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+/* audio player */
+#audio-wrapper {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: rgb(60,60,60) !important;
+}
+
+#audio-container {
+    max-width: 1130px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+audio {
+    width: calc(100% - 100px);
+}
+
+#next-btn, #prev-btn {
+    background: none;
+    border: none;
+    width: auto;
+    margin: 0px;
+    padding: 17px;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 2;
+    font-size: 14px;
+}
+
+#next-btn:hover,#prev-btn :hover {
+    color: rgb(200, 255, 0);
+}
+
+#next-btn {
+    float: right;
+}
+
+#prev-btn {
+    float: left;
+}
+
+#bars {
+    height: 1em;
+    position: relative;
+    float: right;
+    right: 15px;
+    top: 5px;
+    margin-left: 20px;
+}
+
+.bar {
+    background: slategray;
+    bottom: 0;
+    height: .1em;
+    position: absolute;
+    width: 3px;
+    animation: sound 1s cubic-bezier(.17,.37,.43,.67) infinite alternate;
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: .1em; 
+    }
+    100% {
+        opacity: 1;       
+        height: 1em;        
+    }
+}
+
+.bar:nth-child(1)  { left:  0em; animation-duration: 0.6s; }
+.bar:nth-child(2)  { left: .25em; animation-duration: 0.4s; }
+.bar:nth-child(3)  { left: .50em; animation-duration: 1.2s; }
+.bar:nth-child(4)  { left: .75em; animation-duration: 0.5s; }
+
+#spinner {
+    display: block;
+    position: relative;
+    right: 18px;
+    top: 1px;
+    float: right;
+}
+
+#spinner div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    margin: 0px;
+    border: 4px solid #ddd !important;;
+    border-radius: 50%;
+    animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #ddd transparent transparent transparent !important;
+}
+
+#spinner div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+#spinner div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+#spinner div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#connect-google.connected {
+    background-color: #28a745;  /* Green color */
+    color: #fff;  /* White text color */
+    border: none;  /* Remove border */
+    cursor: default;  /* Default cursor */
+  }
+  
